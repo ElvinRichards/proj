@@ -22,3 +22,8 @@ steps:
     SourceFolder: '$(agent.builddirectory)'
     Contents: '**csproj'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
